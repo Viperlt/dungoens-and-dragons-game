@@ -1,0 +1,23 @@
+  .game-board-content{
+    @apply h-full mt-6;
+  }
+  
+  .board-row {
+    @apply flex justify-center;
+  }
+  
+  .board-cell {
+    @apply border border-black size-12;
+    @apply flex items-center justify-center;
+    @apply bg-white;
+  }
+  
+  .player {
+    @apply bg-blue-500 text-white font-bold;
+  }
+  
+  .game-board-controls {
+    @apply flex gap-2 justify-center;
+  }
+  
+  
