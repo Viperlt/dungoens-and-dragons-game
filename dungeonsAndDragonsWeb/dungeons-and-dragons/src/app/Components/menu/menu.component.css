@@ -1,0 +1,7 @@
+.menu-buttons{
+    @apply flex justify-end h-6;
+    @apply bg-emerald-300;
+}
+button{
+    @apply mx-1;
+}

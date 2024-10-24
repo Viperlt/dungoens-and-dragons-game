@@ -1,0 +1,20 @@
+<div class="game-board-content">
+    <div class="game-board">
+        <div *ngFor="let row of board; let rowIndex = index" class="board-row">
+        <div *ngFor="let cell of row" class="board-cell" [ngClass]="{ 'player': cell === 'P' }">
+            {{ cell }}
+        </div>
+        </div>
+    </div>
+    
+    <!-- Optional: Handle arrow keys for movement -->
+    <span (keydown)="handleKeyPress($event)" tabindex="0"></span>
+
+    <!-- Movement Buttons -->
+    <div class="game-board-controls">
+        <button (click)="movePlayer('up')">Up</button>
+        <button (click)="movePlayer('down')">Down</button>
+        <button (click)="movePlayer('left')">Left</button>
+        <button (click)="movePlayer('right')">Right</button>
+    </div>
+</div>
