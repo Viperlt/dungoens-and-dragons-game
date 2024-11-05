@@ -1,5 +1,5 @@
-  .game-board-content{
-    @apply h-full mt-6;
+  .game-board-bg{
+    @apply bg-dnd-board size-fit p-20 justify-self-center;
   }
   
   .board-row {
@@ -7,17 +7,12 @@
   }
   
   .board-cell {
-    @apply border border-black size-12;
+    @apply border border-black size-5 backdrop-blur-sm;
     @apply flex items-center justify-center;
-    @apply bg-white;
   }
   
   .player {
     @apply bg-blue-500 text-white font-bold;
-  }
-  
-  .game-board-controls {
-    @apply flex gap-2 justify-center;
   }
   
   

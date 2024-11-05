@@ -16,9 +16,9 @@ export class GameBoardComponent {
     this.initializeBoard();
   }
 
-  // Initialize the board as a 10x10 grid
+  // Initialize the board as a 24x24 grid
   initializeBoard(): void {
-    this.board = Array(10).fill(null).map(() => Array(10).fill(null));
+    this.board = Array(24).fill(null).map(() => Array(24).fill(null));
     this.updateBoard();
   }
 
@@ -34,52 +34,13 @@ export class GameBoardComponent {
     );
   }
 
-  // Function to move the player in the given direction
-  movePlayer(direction: string): void {
-    switch (direction) {
-      case 'up':
-        if (this.player.y > 0) this.player.y--;
-        break;
-      case 'down':
-        if (this.player.y < 9) this.player.y++;
-        break;
-      case 'left':
-        if (this.player.x > 0) this.player.x--;
-        break;
-      case 'right':
-        if (this.player.x < 9) this.player.x++;
-        break;
-    }
-
-    this.updateBoard();
-    this.sendMoveToServer(direction); // Send the move to the back-end
-  }
-
-  // Function to send player move to the back-end
-  sendMoveToServer(direction: string): void {
-    this.http.post('/api/player/move', { direction })
-      .subscribe(response => {
-        console.log('Move registered on the server:', response);
-      }, error => {
-        console.error('Error moving player:', error);
-      });
-  }
-
-  // Handle key press events for movement (optional)
-  handleKeyPress(event: KeyboardEvent): void {
-    switch (event.key) {
-      case 'ArrowUp':
-        this.movePlayer('up');
-        break;
-      case 'ArrowDown':
-        this.movePlayer('down');
-        break;
-      case 'ArrowLeft':
-        this.movePlayer('left');
-        break;
-      case 'ArrowRight':
-        this.movePlayer('right');
-        break;
-    }
-  }
+  // Function to send player move to the back-end. Check on how to write code to new standards.
+  // sendMoveToServer(direction: string): void {
+  //   this.http.post('/api/player/move', { direction })
+  //     .subscribe(response => {
+  //       console.log('Move registered on the server:', response);
+  //     }, error => {
+  //       console.error('Error moving player:', error);
+  //     });
+  // }
 }
