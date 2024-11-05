@@ -19,10 +19,11 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String characterName;
-    private String characterClass;
+    private String charName;
+    private String charClass;
+    private int level;
 
     @ManyToOne
     @JoinColumn(name = "player_id")
-    private Player player;
+    private User user;
 }

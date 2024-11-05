@@ -1,5 +1,27 @@
-    <div class="menu-buttons">
-        <button>Home</button>
-        <button>About</button>
-        <button>Info</button>
+<div class="menu">
+    <div class="title">
+        <img src="/assets/dnd-title.png" alt="D&D title"/>
     </div>
+    <nav class="menu-buttons">
+        <button class="game-button" routerLink="/login" (click)="onPlay()">
+            <span>
+                Play
+            </span>
+        </button>
+        <button class="game-button">
+            <span>
+                Home
+            </span>
+        </button>
+        <button class="game-button">
+            <span>
+                About
+            </span>
+        </button>
+        <button class="game-button">
+            <span>
+                Info
+            </span>
+        </button>
+    </nav>
+</div>

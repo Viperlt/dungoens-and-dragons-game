@@ -24,5 +24,5 @@ public class GameSession {
     private LocalDateTime sessionDate;
 
     @ManyToMany
-    private List<Player> players;
+    private List<User> users;
 }

@@ -1,7 +1,16 @@
-.menu-buttons{
-    @apply flex justify-end h-6;
-    @apply bg-emerald-300;
+.menu{
+    @apply static;
+    @apply text-white;
 }
-button{
-    @apply mx-1;
+.title{
+    @apply absolute top-0 left-0;
+}
+.menu-buttons{
+    @apply h-6 flex flex-row justify-end;
+}
+.game-button{
+    @apply relative bg-dnd-sign-board text-orange-300 font-serif py-9 px-9 rounded;
+}
+.game-button>span{
+    @apply absolute inset-0 flex items-center justify-center hover:text-orange-400 active:text-orange-500;
 }

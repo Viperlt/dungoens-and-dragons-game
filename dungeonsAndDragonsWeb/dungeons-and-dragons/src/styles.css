@@ -2,11 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-  body, app-root, app-game-board{
-    @apply flex flex-col h-screen bg-gray-100;
+@layer utilities {
+  .bg-tavern {
+    background-image: url('/assets/tavern.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-beam-up {
+    background-image: url('/assets/dnd-beam-up.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-beam-down {
+    background-image: url('/assets/dnd-beam-down.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-dnd-board{
+    background-image: url('/assets/dnd-board.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-dnd-sign-board{
+    background-image: url('/assets/wooden-sign-board.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+  body{
+    @apply bg-tavern static h-screen bg-gray-100;
   }
 
   footer{
-    @apply mt-auto bg-emerald-300;
+    @apply absolute bottom-0 h-6 w-full text-white;
   }
 
