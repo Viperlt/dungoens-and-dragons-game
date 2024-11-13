@@ -34,13 +34,4 @@ export class GameBoardComponent {
     );
   }
 
-  // Function to send player move to the back-end. Check on how to write code to new standards.
-  // sendMoveToServer(direction: string): void {
-  //   this.http.post('/api/player/move', { direction })
-  //     .subscribe(response => {
-  //       console.log('Move registered on the server:', response);
-  //     }, error => {
-  //       console.error('Error moving player:', error);
-  //     });
-  // }
 }

@@ -3,7 +3,6 @@ package com.dungoensAndDragons.dungoensAndDragons.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.dungoensAndDragons.dungoensAndDragons.exceptions.ResourceNotFoundException;
@@ -15,9 +14,6 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
 
     public Optional<User> getUserById(Long id) {
 	return userRepository.findById(id);
@@ -46,7 +42,7 @@ public class UserService {
 	User user = new User();
 
 	user.setUsername(username);
-	user.setPassword(passwordEncoder.encode(password));
+	user.setPassword(password);
 
 	return userRepository.save(user);
     }

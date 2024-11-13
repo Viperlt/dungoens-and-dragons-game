@@ -13,10 +13,20 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
+  onLogin() {
     this.authService.login(this.username, this.password).subscribe(
-      response => console.log(response),
-      error => console.error(error)
+      (response: any) => {
+        // Store the JWT token in localStorage
+        localStorage.setItem('jwtToken', response.token);
+        console.log('Login successful, token stored.');
+        
+        // // Navigate to the desired page after login
+        // this.router.navigate(['/game-board']); // Replace '/dashboard' with your desired route
+      },
+      (error) => {
+        console.error('Login failed:', error);
+        // Handle login error (e.g., display error message)
+      }
     );
   }
 
