@@ -1,17 +1,23 @@
 .register-form{
     @apply flex flex-col items-center;
-    @apply justify-self-center p-2;
-    @apply border-x-4 border-y-4 rounded border-black backdrop-blur-sm;
+    @apply justify-self-center;
+    @apply rounded bg-dnd-sign-board;
 }
 h2{
-    @apply font-bold mb-4;
+    @apply text-orange-300 font-bold;
+}
+label{
+    @apply text-orange-300;
 }
 form{
-    @apply flex flex-col items-end space-y-4 max-w-md mx-auto;
+    @apply flex flex-col items-start space-y-2 p-24;
 }
 
 .submit-button{
     @apply relative bg-dnd-sign-board;
     @apply text-orange-300 hover:text-orange-400 active:text-orange-500 font-serif;
     @apply p-3 rounded;
+}
+.buttons{
+    @apply flex flex-row;
 }

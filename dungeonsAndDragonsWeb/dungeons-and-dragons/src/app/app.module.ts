@@ -4,12 +4,13 @@ import { provideRouter, RouterOutlet } from '@angular/router';
 import { GameBoardComponent } from './Components/game-board/game-board.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
+import { AuthInterceptor } from './Services/auth-interceptor.service';
 
 
 
@@ -28,8 +29,9 @@ import { AppComponent } from './app.component';
     FormsModule,
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     provideHttpClient(),
-    provideRouter(routes)
+    provideRouter(routes),
   ],
   bootstrap: [
     AppComponent
